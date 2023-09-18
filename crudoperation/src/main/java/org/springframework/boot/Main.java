@@ -10,7 +10,7 @@ public class Main {
 
         // Create
         try {
-            int id = 1; // Задайте значение id здесь
+            int id = 1; 
             String name = "Эдди";
             crud.createRecord(name, id);
         } catch (SQLException e) {
