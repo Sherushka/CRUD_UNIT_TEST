@@ -15,6 +15,7 @@ public class CRUDOperationsTest {
 
     @Test
     public void testCreateRecord() throws SQLException {
+        //тест функции Create
         crud.createRecord("Тестовое имя", 1);
         String data = crud.readRecord(1);
         assertEquals("Тестовое имя", data);
@@ -22,14 +23,14 @@ public class CRUDOperationsTest {
 
     @Test
     public void testReadRecord() throws SQLException {
-        // Предположим, что в базе данных уже есть запись с id=1 и именем "Мэтью"
+        //предполагаем, что первая функция создала в базе данных нужную нам строку и сравниваем, находится ли она там по id.
         String data = crud.readRecord(1);
         assertEquals("Тестовое имя", data);
     }
 
     @Test
     public void testUpdateRecord() throws SQLException {
-        // Предположим, что в базе данных уже есть запись с id=1 и именем "Мэтью"
+        //тест функции Update
         crud.updateRecord(1, "Новое имя");
         String data = crud.readRecord(1);
         assertEquals("Новое имя", data);
@@ -37,7 +38,7 @@ public class CRUDOperationsTest {
 
     @Test
     public void testDeleteRecord() throws SQLException {
-        // Предположим, что в базе данных есть запись с id=1
+        //тест функции Delete
         crud.deleteRecord(1);
         String data = crud.readRecord(1);
         assertNull(data);
